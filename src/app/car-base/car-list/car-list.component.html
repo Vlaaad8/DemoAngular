@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <th>
+      Model
+    </th>
+    <th>
+      Color
+    </th>
+    <th>
+      Year
+    </th>
+    <th>
+      Producer
+    </th>
+    <th>
+      In Use
+    </th>
+    <th>
+      Delete
+    </th>
+  </thead>
+    <tr *ngFor="let car of cars">
+    <app-car-detail [carDetails]="car"  (remove)="handleRemove($event)"></app-car-detail>
+    </tr>
+</table>
+<button (click)="handleNotInUse()">Show all not in use</button>
+<button (click)="handleInUse()">Show all in use</button>
+<button (click)="handleReset()">Reset</button>
+

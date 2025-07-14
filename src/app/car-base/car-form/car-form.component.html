@@ -1,0 +1,37 @@
+<form #form="ngForm" (ngSubmit)="handleSubmit(form)" >
+<label appHighlightText *ngIf="!form.pristine">ID</label>
+<input type="number" [(ngModel)]="car.id" *ngIf="!form.pristine" name="id"/>
+<br>
+<label appHighlightText>Model</label>
+<input type="text" [(ngModel)]="car.model" name="model"/>
+<br>
+<label appHighlightText>Color</label>
+<input type="text" [(ngModel)]="car.color" name="color"/>
+<br>
+<label appHighlightText>Year</label>
+<input type="number" [(ngModel)]="car.year" name="year"/>
+<br>
+<label appHighlightText>Producer</label>
+<input type="text" [(ngModel)]="car.producer" name="producer">
+<br>
+<label for="inUse" appHighlightText>Used</label>
+<br>
+<input type="radio" [(ngModel)]="car.inUse" name="inUse" [value]="true"/>
+<label>True</label>
+<input type="radio" [(ngModel)]="car.inUse" name="inUse" [value]="false"/>
+<label>False</label>
+<br>
+<button type="submit">Add</button>
+<button type="button" (click)="handleUpdate(form)" [disabled]="form.pristine">Update</button>
+</form>
+
+
+<ng-container *ngIf="form.pristine ; then updateFalse; else updateTrue"></ng-container>
+
+<ng-template #updateFalse>
+  <p>To be eligible to update a resourse, modify something in the textfields</p>
+</ng-template>
+
+<ng-template #updateTrue>
+  <p>All set for update!</p>
+</ng-template>

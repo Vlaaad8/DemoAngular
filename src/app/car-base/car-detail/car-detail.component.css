@@ -1,0 +1,9 @@
+:host{
+    display:contents
+}
+.used{
+    background-color: green;
+}
+.notUsed{
+    background-color: red;
+}

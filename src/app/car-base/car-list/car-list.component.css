@@ -1,0 +1,13 @@
+tr:nth-child(odd){
+    background-color:aqua
+}
+tr:nth-child(even){
+    background-color: blue;
+}
+th{
+     background-color:aqua
+}
+
+:host{
+    display: inline
+}

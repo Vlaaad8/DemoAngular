@@ -1,0 +1,8 @@
+    <td>{{carDetails.model}}</td>
+    <td> {{carDetails.color}}</td>
+    <td>{{carDetails.year}}</td>
+    <td>{{carDetails.producer}}</td>
+    <td  [ngClass]="carDetails.inUse ? 'used' : 'notUsed'">{{carDetails.inUse}}</td>
+    <td>
+      <button (click)="handleDelete()">Erase</button>
+    </td>
